@@ -1,0 +1,47 @@
+[colors.bright]
+black = "#303446"
+blue = "#8caaee"
+cyan = "#81c8be"
+green = "#a6d189"
+magenta = "#ca9ee6"
+red = "#e78284"
+white = "#c6d0f5"
+yellow = "#e5c890"
+
+[colors.normal]
+black = "#24273a"
+blue = "#8aadf4"
+cyan = "#8bd5ca"
+green = "#a6da95"
+magenta = "#c6a0f6"
+red = "#ed8796"
+white = "#cad3f5"
+yellow = "#eed49f"
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#b4befe"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold"}
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic"}
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic"}
+size = 12
+
+[[keyboard.bindings]]
+chars = "\u0017"
+key = "Back"
+mods = "Control"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+dynamic_padding = true
+padding = { x = 5, y = 0}
