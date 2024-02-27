@@ -11,6 +11,9 @@ Portable configuration files for standing up new machines. Mainly for Arch Linux
 ## Dependencies
 * [Zsh](#zsh)
 * [Brew (MacOS only)](#brew)
+* [Oh My Zsh](#oh-my-zsh)
+* [Powerlevel10k](#powerlevel10k)
+* [Nerd Fonts](#nerd-fonts)
 ### Zsh
 1. Install Zsh
 
@@ -30,45 +33,47 @@ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 ```
 
 ### Brew
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+```bash
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
 
-## Powerlevel10k
-Powerlevel10k should also be installed automatically. If not, continue
+### Oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-1. CLone the repo
+### Powerlevel10k
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+the theme should automatically apply if you follow the install guide
 
-2. set the theme in ~.zshrc
+### Nerd Fonts 
+1. Download the JetbrainsMono Nerd Font (here)[https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip]
+2. Either click on the fonts, or install them to `/usr/share/fonts/JetbrainsMonoNF/`
+3. Set your terminal font to JetbrainsMonoNFM. This should automatically happen if you follow the install guide.
+
+
+### Neovim
+#### Fedora
+```bash
+sudo dnf install neovim
 ```
-ZSH_THEME="powerlevel10k/powerlevel10k"
+
+#### MacOS
+```bash
+brew install neovim
 ```
 
-## Install Fonts
-1. Download the following fonts
-    * [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-    * [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
-    * [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
-    * [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
-
-2. Either click on the fonts, or install them to `/usr/share/fonts/MesloLGS/`
-3. Set your terminal font to MesloLGS. This should automatically happen in alacritty.
-
-
-## Neovim
-### Install Neovim 0.9
-1. Install through pacman package manager
+### Arch Linux
 ```bash
 sudo pacman -S neovim
 ```
 
-2. Verify Neovim version
-The Arch repos may install a newer version, as of now, this config is only tested with Neovim 0.9. Check your version with the following:
-```bash
-nvim --version
-```
-
-If you do not have Neovim 0.9, you must build and install the binary from source:
+If you get errors due to an outdated version of neovim, you must build and install the binary from source:
 ```bash
 git clone https://github.com/neovim/neovim.git
 cd neovim
@@ -127,4 +132,3 @@ Check the health of neovim
 ```
 
 ### Language Servers
-
