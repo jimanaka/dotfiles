@@ -3,7 +3,7 @@ Portable configuration files and setup instructions for standing up new machines
 
 ## Index
 * [Dependencies](#dependencies)
-* [Installation] (#installation)
+* [Installation](#installation)
 
 ## Dependencies
 * [Alacritty](#alacritty)
