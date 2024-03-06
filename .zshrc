@@ -129,14 +129,14 @@ unset __conda_setup
 
 # ssh agent
 #
-if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
-    eval $(ssh-agent -s) > /dev/null
-    if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
-    # Auto-add ssh keys to your ssh agent
-    # Example:
-    ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
-    fi
-fi
+# if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
+#     eval $(ssh-agent -s) > /dev/null
+#     if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
+#     # Auto-add ssh keys to your ssh agent
+#     # Example:
+#     ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
+#     fi
+# fi
 
 #fpath=(/home/$USER/.config/fnm/completions $fpath)
 #source /home/jimanaka/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
