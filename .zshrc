@@ -79,6 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
@@ -127,8 +128,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# ssh agent
-#
+# # ssh agent
+# #
 # if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
 #     eval $(ssh-agent -s) > /dev/null
 #     if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
@@ -147,3 +148,5 @@ TERM=xterm-256color
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+export PATH=$PATH:/home/jimanaka/.spicetify
