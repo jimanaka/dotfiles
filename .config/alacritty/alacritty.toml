@@ -45,3 +45,4 @@ multiplier = 3
 [window]
 dynamic_padding = true
 padding = { x = 5, y = 0}
+option_as_alt = "both"
