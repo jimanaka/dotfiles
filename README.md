@@ -1,21 +1,30 @@
 # Dotfiles
-Portable configuration files for standing up new machines. Mainly for Arch Linux, but I may add instructions for other distros, idk.
+Portable configuration files and setup instructions for standing up new machines. Currently, mainly for Fedora.
 
 ## Index
 * [Dependencies](#dependencies)
-* [Zsh](#zsh)
-* [Powerlevel10k](#powerlevel10k)
-* [Install Fonts](#install-fonts)
-* [Neovim](#neovim)
+* [Installation](#installation)
 
 ## Dependencies
+* [Alacritty](#alacritty)
 * [Zsh](#zsh)
-* [Brew (MacOS only)](#brew)
+* [Brew (macOS only)](#brew)
+* [Nerd Fonts](#nerd-fonts)
 * [Oh My Zsh](#oh-my-zsh)
 * [Powerlevel10k](#powerlevel10k)
-* [Nerd Fonts](#nerd-fonts)
+* [Node Support](#node)
+* [Neovim](#neovim)
+* [NvChad](#nvchad)
+* [Other Small Programs](#Misc)
+
+### Alacritty
+
+#### Fedora
+```bash
+sudo dnf install alacritty
+```
+
 ### Zsh
-1. Install Zsh
 
 #### Fedora
 ```bash
@@ -24,12 +33,6 @@ sudo dnf install zsh
 #### Arch Linux
 ```bash
 sudo pacman -S zsh
-```
-oh-my-zsh should be automatically installed. If it isn't, continue 
-
-2. Download oh-my-zsh
-```bash
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 ```
 
 ### Brew
@@ -41,8 +44,25 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
 ### Oh-my-zsh
+1. Install oh-my-zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+2. Install relevant plugins
+##### zsh-autosuggestions
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+##### zsh-syntax-highlighting
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+##### history-substring-search
+```bash
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 ```
 
 ### Powerlevel10k
@@ -54,7 +74,7 @@ the theme should automatically apply if you follow the install guide
 ### Nerd Fonts 
 1. Download the JetbrainsMono Nerd Font (here)[https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip]
 2. Either click on the fonts, or install them to `/usr/share/fonts/JetbrainsMonoNF/`
-3. Set your terminal font to JetbrainsMonoNFM. This should automatically happen if you follow the install guide.
+3. Set your terminal font to JetbrainsMonoNFM. This should automatically happen if you follow the installation guide. (May need to use JetbrainsMonoNF instead of JetbrainsMonoNFM)
 
 
 ### Neovim
@@ -68,7 +88,7 @@ sudo dnf install neovim
 brew install neovim
 ```
 
-### Arch Linux
+#### Arch Linux
 ```bash
 sudo pacman -S neovim
 ```
@@ -82,30 +102,8 @@ make CMAKE_BUID_TYPE=Release
 sudo make install
 ```
 
-### Install Other Required Packages
-There might be more than this, I'm just adding the documentation as I go
-```bash
-sudo pacman -S xsel zathura zathura-pdf-mupdf xdotool biber clangd ripgrep python texlive-most texlive-lang texlive-bibtexextra
-```
-
-### Python Support
-1. Install python
-```bash
-sudo pacman -S python
-```
-
-2. Install pynvim
-```bash
-pip install pynvim
-```
-
-### Node Support
+### Node
 1. Install fnm (Fast Node Manager)
-```bash
-yay -S fnm
-```
-
-or
 ```bash
 curl -fsSL https://fnm.vercel.app/install | bash
 ```
@@ -115,20 +113,46 @@ curl -fsSL https://fnm.vercel.app/install | bash
 fnm ls-remote
 ```
 
-3. Install node version (tested with 19.3.0)
+3. Install node version (tested with 20.10.0)
 ```bash
-fnm install v19.3.0
+fnm install 20.10.0
 ```
 
-### Running Neovim
-Run neovim to install all the plugins and stuff
+### NvChad
+1. Install NvChad
 ```bash
-nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+```
+Go through the setup process. You can select [Y] to use default configurations (it doesn't matter)
+
+2. Remove the ~/.config/nvim/lua/custom/ directory
+```bash
+rm -rf ~/.config/nvim/lua/custom/
 ```
 
-Check the health of neovim
+### Misc
 ```bash
-:checkhealth
+sudo dnf install wl-copy ripgrep stow neofetch htop tree vim
 ```
 
-### Language Servers
+## Installation
+1. clone the repo
+```bash
+git clone git@github.com:jimanaka/dotfiles.git ~/dotfiles
+```
+or 
+```bash
+git clone https://github.com/jimanaka/dotfiles.git ~/dotfiles
+```
+
+2. Backup old configuration files
+```bash
+mv ~/.config/nvim/lua/custom ~/custom.bak && mv ~/.zshrc ~/.zshrc_pre_stow.bak
+```
+
+2. In the ~/dotfiles directory, run the stow command
+```bash
+stow .
+```
+
+If you see any errors, it is probably because a file of the same name already exists in the stow location

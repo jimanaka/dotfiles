@@ -1,6 +1,17 @@
 local M = {}
 
+M.whichkey = {
+	plugins = {
+		triggers_blacklist = {
+			i = { "j", "k" },
+			v = { "j", "k" },
+			n = { "j", "k" },
+		},
+	},
+}
+
 M.treesitter = {
+<<<<<<< HEAD
   ensure_installed = {
     "vim",
     "lua",
@@ -21,33 +32,59 @@ M.treesitter = {
       "python"
     },
   },
+=======
+	ensure_installed = {
+		"vim",
+		"lua",
+		"html",
+		"css",
+		"javascript",
+		"typescript",
+		"tsx",
+		"c",
+		"markdown",
+		"markdown_inline",
+		"python",
+		"rust",
+	},
+	indent = {
+		enable = true,
+		-- disable = {
+		--   "python"
+		-- },
+	},
+>>>>>>> f8e3b4497ae4276984cdf650c8b2e2fbf4aa2542
 }
 
 M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
+	ensure_installed = {
+		-- lua stuff
+		"lua-language-server",
+		"stylua",
 
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
-    "prettier",
-    "tailwindcss-language-server",
+		-- markdown
+		"ltex-ls",
+		"cbfmt",
 
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
+		-- web dev stuff
+		"css-lsp",
+		"html-lsp",
+		"typescript-language-server",
+		"deno",
+		"prettier",
+		"tailwindcss-language-server",
 
-    -- python
-    "python-lsp-server",
-    "autopep8",
+		-- c/cpp stuff
+		"clangd",
+		"clang-format",
 
-    -- rust
-    "rust-analyzer"
-  },
+		-- python
+		"python-lsp-server",
+		"autopep8",
+
+		-- rust
+		"rust-analyzer",
+	},
 }
 
 -- git support in nvimtree
@@ -66,59 +103,59 @@ M.mason = {
 --   },
 -- }
 M.nvimtree = {
-  git = {
-    enable = true,
-  },
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-  },
-  renderer = {
-    root_folder_modifier = ":t",
-    icons = {
-      glyphs = {
-        default = "",
-        symlink = "",
-        folder = {
-          arrow_open = "",
-          arrow_closed = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "",
-          staged = "S",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "U",
-          deleted = "",
-          ignored = "◌",
-        },
-      },
-    },
-  },
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
-  -- renderer = {
-  --   highlight_git = true,
-  --   icons = {
-  --     show = {
-  --       git = true,
-  --     },
-  --   },
-  -- },
+	git = {
+		enable = true,
+	},
+	update_focused_file = {
+		enable = true,
+		update_cwd = true,
+	},
+	renderer = {
+		root_folder_modifier = ":t",
+		icons = {
+			glyphs = {
+				default = "",
+				symlink = "",
+				folder = {
+					arrow_open = "",
+					arrow_closed = "",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+					symlink_open = "",
+				},
+				git = {
+					unstaged = "",
+					staged = "S",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "U",
+					deleted = "",
+					ignored = "◌",
+				},
+			},
+		},
+	},
+	diagnostics = {
+		enable = true,
+		show_on_dirs = true,
+		icons = {
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		},
+	},
+	-- renderer = {
+	--   highlight_git = true,
+	--   icons = {
+	--     show = {
+	--       git = true,
+	--     },
+	--   },
+	-- },
 }
 
 return M
