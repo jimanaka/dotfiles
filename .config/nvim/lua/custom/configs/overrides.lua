@@ -11,28 +11,6 @@ M.whichkey = {
 }
 
 M.treesitter = {
-<<<<<<< HEAD
-  ensure_installed = {
-    "vim",
-    "lua",
-    "html",
-    "css",
-    "javascript",
-    "typescript",
-    "tsx",
-    "c",
-    "markdown",
-    "markdown_inline",
-    "python",
-    "rust",
-  },
-  indent = {
-    enable = true,
-    disable = {
-      "python"
-    },
-  },
-=======
 	ensure_installed = {
 		"vim",
 		"lua",
@@ -49,11 +27,10 @@ M.treesitter = {
 	},
 	indent = {
 		enable = true,
-		-- disable = {
-		--   "python"
-		-- },
+		disable = {
+			"python",
+		},
 	},
->>>>>>> f8e3b4497ae4276984cdf650c8b2e2fbf4aa2542
 }
 
 M.mason = {
@@ -113,6 +90,9 @@ M.nvimtree = {
 	renderer = {
 		root_folder_modifier = ":t",
 		icons = {
+      show = {
+        git = true,
+      },
 			glyphs = {
 				default = "",
 				symlink = "",
