@@ -12,7 +12,7 @@ map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 
 -- -- formatting
 map("n", "<leader>fm", function()
-  require("conform").format()
+require("conform").format()
 end, { desc = "formatting" })
 
 -- -- tmux navigation
@@ -64,10 +64,10 @@ map("i", "<C-k>", "<Up>", { desc = "Move Up" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 
-map("n", "<C-h>", "<C-w>h", { desc = "Switch Window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "Switch Window right" })
-map("n", "<C-j>", "<C-w>j", { desc = "Switch Window down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Switch Window up" })
+-- map("n", "<C-h>", "<C-w>h", { desc = "Switch Window left" })
+-- map("n", "<C-l>", "<C-w>l", { desc = "Switch Window right" })
+-- map("n", "<C-j>", "<C-w>j", { desc = "Switch Window down" })
+-- map("n", "<C-k>", "<C-w>k", { desc = "Switch Window up" })
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy whole" })
@@ -77,9 +77,9 @@ map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "Toggle Relative number" })
 map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
 -- global lsp mappings
-map("n", "<leader>fm", function()
-  vim.lsp.buf.format { async = true }
-end, { desc = "Lsp formatting" })
+-- map("n", "<leader>fm", function()
+--   vim.lsp.buf.format { async = true }
+-- end, { desc = "Lsp formatting" })
 
 map("n", "<leader>lf", vim.diagnostic.open_float, { desc = "Lsp floating diagnostics" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Lsp prev diagnostic" })
