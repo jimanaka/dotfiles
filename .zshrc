@@ -150,3 +150,10 @@ export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 export PATH=$PATH:/home/jimanaka/.spicetify
+
+# fnm
+FNM_PATH="/home/croc/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/croc/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
