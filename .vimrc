@@ -4,6 +4,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
+set smarttab
 set number
 set relativenumber
 set termguicolors
@@ -30,4 +31,14 @@ nnoremap k gk
 " Buff navigation
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
+
+" Search Opotions
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+
+" Text Options
+set linebreak
+set scrolloff=5
 
