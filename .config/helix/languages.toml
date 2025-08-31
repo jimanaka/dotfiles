@@ -1,0 +1,7 @@
+[language-server.rust-analyzer.config]
+command = "rust-analyzer"
+
+[[language]]
+name = "rust"
+auto-format = true
+roots = [ "Cargo.toml", "Cargo.lock" ]

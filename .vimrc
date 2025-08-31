@@ -1,15 +1,15 @@
 " General
 syntax on
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set number
 set relativenumber
 set termguicolors
-colorscheme catppuccin_mocha
 set mouse=a
 set noswapfile
+" colorscheme catppuccin_mocha
 
 
 " Insert
