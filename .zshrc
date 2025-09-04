@@ -1,12 +1,13 @@
-
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/jimanaka/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-# 
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 . "$HOME/.cargo/env"
 
 eval "$(starship init zsh)"
