@@ -5,3 +5,17 @@ command = "rust-analyzer"
 name = "rust"
 auto-format = true
 roots = [ "Cargo.toml", "Cargo.lock" ]
+
+
+[language-server.pylsp.config]
+command = "pylsp"
+
+[[language]]
+name = "python"
+
+
+[langauge-server.clangd.config]
+command = "clangd"
+
+[[language]]
+name = "c"

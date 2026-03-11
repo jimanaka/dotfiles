@@ -6,7 +6,7 @@ compinit
 # End of lines added by compinstall
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 . "$HOME/.cargo/env"
 
