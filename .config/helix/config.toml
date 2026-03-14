@@ -57,6 +57,7 @@ hidden = false
 g = { a = "code_action" } # ga to open code actions
 X = "extend_line_above" # Shift+x to select the whole line above
 D = [ "extend_to_line_end", "change_selection"] # Wipe and edit the current line from cursor position
+S-v = ["extend_line_below", "select_mode"]
 
 # Use system clipboard
 p = "paste_clipboard_before"
