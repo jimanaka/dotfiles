@@ -18,3 +18,10 @@ export NVM_DIR="$HOME/.nvm"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+. "$HOME/.local/bin/env"
+
+# keep active virtual envs for tmux
+if [[ -n "$VIRTUAL_ENV" && "$PATH" != *"$VIRTUAL_ENV/bin"* ]]; then
+  source "$VIRTUAL_ENV/bin/activate"
+fi
