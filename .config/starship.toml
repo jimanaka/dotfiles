@@ -18,3 +18,8 @@ truncate_to_repo = false
 [username]
 show_always = true
 format = '[$user]($style):'
+
+[python]
+detect_folders = []
+detect_extensions = []
+detect_files = []

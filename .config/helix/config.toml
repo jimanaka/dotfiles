@@ -8,6 +8,7 @@ auto-save = true
 # cursorcolumn = true
 bufferline = "always"
 true-color = true
+line-number = "relative"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -60,9 +61,9 @@ D = [ "extend_to_line_end", "change_selection"] # Wipe and edit the current line
 S-v = ["extend_line_below", "select_mode"]
 
 # Use system clipboard
-p = "paste_clipboard_before"
-y = "yank_main_selection_to_clipboard"
-d = ["yank_main_selection_to_clipboard", "delete_selection"]
+# p = "paste_clipboard_before"
+# y = "yank_main_selection_to_clipboard"
+# d = ["yank_main_selection_to_clipboard", "delete_selection"]
 
 # https://github.com/helix-editor/helix/discussions/7908
 space.x = ":toggle whitespace.render all none"
