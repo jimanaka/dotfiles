@@ -25,3 +25,5 @@ bindkey "^[[1;5D" backward-word
 if [[ -n "$VIRTUAL_ENV" && "$PATH" != *"$VIRTUAL_ENV/bin"* ]]; then
   source "$VIRTUAL_ENV/bin/activate"
 fi
+
+source /usr/share/fzf/shell/key-bindings.zsh

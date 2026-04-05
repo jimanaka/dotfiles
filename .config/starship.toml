@@ -23,3 +23,9 @@ format = '[$user]($style):'
 detect_folders = []
 detect_extensions = []
 detect_files = []
+format = '(\($virtualenv\) )'
+
+[c]
+detect_folders = []
+detect_extensions = []
+detect_files = []

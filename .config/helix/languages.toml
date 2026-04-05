@@ -7,11 +7,20 @@ auto-format = true
 roots = [ "Cargo.toml", "Cargo.lock" ]
 
 
+# Python
 [language-server.pylsp.config]
 command = "pyright"
 
+[language-server.ruff]
+command = "ruff"
+args = ["server", "-q", "--preview"]
+
 [[language]]
 name = "python"
+language-servers = [ {name = "pyright", except-features=["diagnostics"]}, "ruff" ]
+file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { glob = ".python_history" }, { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "SConstruct" }, { glob = "SConscript" }]
+shebangs = ["python"]
+roots = ["pyproject.toml", "requirements.txt"]
 
 
 [langauge-server.clangd.config]
