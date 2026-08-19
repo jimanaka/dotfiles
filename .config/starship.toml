@@ -29,3 +29,11 @@ format = '(\($virtualenv\) )'
 detect_folders = []
 detect_extensions = []
 detect_files = []
+
+[nodejs]
+detect_folders = []
+detect_extensions = []
+detect_files = []
+
+[rust]
+disabled = true
