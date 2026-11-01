@@ -27,3 +27,6 @@ if [[ -n "$VIRTUAL_ENV" && "$PATH" != *"$VIRTUAL_ENV/bin"* ]]; then
 fi
 
 source /usr/share/fzf/shell/key-bindings.zsh
+
+alias vim='nvim'
+alias nv='nvim'

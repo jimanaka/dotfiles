@@ -8,7 +8,7 @@ highlight link opnoteIP Special
 
 " ---- Comments ----
 syntax match opnoteComment /\/\/.*/
-syntax match opnoteComment /^\#.*/
+syntax match opnoteComment /\#.*/
 highlight link opnoteComment Comment
 
 " ---- Folds ----
