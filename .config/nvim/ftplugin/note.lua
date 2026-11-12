@@ -28,8 +28,8 @@ map("i", "<F4>", insert_fold,
   vim.tbl_extend("force", opts, { desc = "Insert fold" }))
 
 vim.opt_local.foldmethod = "expr"
-vim.opt_local.foldexpr = "v:lua.require('configs.opnote_fold').foldexpr()"
-vim.opt_local.foldtext = "v:lua.require('configs.opnote_fold').foldtext()"
+vim.opt_local.foldexpr = "v:lua.require('configs.note_fold').foldexpr()"
+vim.opt_local.foldtext = "v:lua.require('configs.note_fold').foldtext()"
 vim.opt_local.foldlevel = 0
 
 vim.opt_local.number = false
