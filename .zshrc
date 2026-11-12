@@ -1,14 +1,14 @@
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/jimanaka/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 eval "$(starship init zsh)"
 
@@ -19,7 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
 # keep active virtual envs for tmux
 if [[ -n "$VIRTUAL_ENV" && "$PATH" != *"$VIRTUAL_ENV/bin"* ]]; then
@@ -30,3 +30,6 @@ source /usr/share/fzf/shell/key-bindings.zsh
 
 alias vim='nvim'
 alias nv='nvim'
+
+export EDITOR=nvim
+export VISUAL=nvim
