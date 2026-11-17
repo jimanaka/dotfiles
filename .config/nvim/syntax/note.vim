@@ -12,7 +12,7 @@ syntax match noteComment /\#.*/
 highlight link noteComment Comment
 
 " ---- Folds ----
-syntax match foldThing /^=\{48\}$/
+syntax match foldThing /^+\{48\}$/
 syntax match foldThing /^\(\/\\\)\{24\}$/
 syntax match foldThing /{{{$/
 syntax match foldThing /}}}$/

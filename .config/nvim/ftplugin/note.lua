@@ -11,7 +11,7 @@ local function insert_fold()
   local row = vim.api.nvim_win_get_cursor(0)[1] - 1  -- 0-indexed row
   vim.api.nvim_buf_set_text(0, row, 0 , row, 0, {
     "",
-    "================================================",
+    string.rep("+", 48),
     "/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\"
   })
 end

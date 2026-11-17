@@ -5,13 +5,13 @@ function M.foldexpr()
   local line = vim.fn.getline(lnum)
   local next_line = vim.fn.getline(lnum + 1)
 
-  -- header line (line right before the 48 '=' divider) starts level 1
-  if next_line:match("^=+$") and #next_line == 48 then
+  -- header line (line right before the 48 '+' divider) starts level 1
+  if next_line == string.rep("+", 48) then
     return ">1"
   end
 
-  -- the /\/\... divider ends level 1
-  if line:match("^[/\\]+$") and #line == 48 then
+  -- the /\/\... divider (48 pairs) ends level 1
+  if line == string.rep("/\\", 48) then
     return "<1"
   end
 
